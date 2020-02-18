@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+       background: lightblue
+    }
+    .btns button {
+        background-color: darkcyan; /* Green background */
+        border: 1px solid blue; /* Green border */
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        width: 25%;
+        display: block;
+        font-size: 15px;
+
+        {#float: left; /* Float the buttons side by side */#}
+    }
+
+    .panel {
+        padding: 10px;
+        width: 25%;
+        {#display: none;#}
+        {#background-color: white;#}
+        {#overflow: hidden;#}
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Python button script</title>
+</head>
+<body>
+
+<h1>Traveltek Challenge</h1>
+<h3>Polina Dimitrova</h3>
+
+<div class="btns">
+    <button onclick="location.href='{% url 'script1' %}'">Q1. What is the average journey time between London Heathrow
+        (LHR) and Dubai (DXB)?</button>
+        <div class="panel">
+            {% if data1 %}
+                {{ data1 }}
+            {% endif %}
+        </div>
+    <button onclick="location.href='{% url 'script2' %}'">Q2. Which airport day has the most departures from Manchester
+        (MAN)?</button>
+        <div class="panel">
+            {% if data2 %}
+                {{ data2 }}
+            {% endif %}
+        </div>
+    <button onclick="location.href='{% url 'script3' %}'">Q3. What proportion of the flights are business class?</button>
+        <div class="panel">
+            {% if data3 %}
+                {{ data3 }}
+            {% endif %}
+        </div>
+    <button onclick="location.href='{% url 'script4' %}'">Q4. What percentage of the total set of flights fly into
+        Sweden?</button>
+        <div class="panel">
+            {% if data4 %}
+                {{ data4 }}
+            {% endif %}
+        </div>
+    <button onclick="location.href='{% url 'script5' %}'">Q5. What are the top 5 flight carriers?</button>
+        <div class="panel">
+        {% if data5 %}
+            {{ data5 }}
+        {% endif %}
+        </div>
+</div>
+
+</body>
+</html>
